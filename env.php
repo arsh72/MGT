@@ -13,7 +13,7 @@ return [
         'table_prefix' => '',
         'connection' => [
             'default' => [
-                'host' => 'localhost',
+                'host' => '172.26.1.141',
                 'dbname' => 'test-arshdeep',
                 'username' => 'test-arshdeep',
                 'password' => 'GwKydGa3RsFyA5yO',
@@ -34,29 +34,50 @@ return [
     ],
     'x-frame-options' => 'SAMEORIGIN',
     'MAGE_MODE' => 'default',
-    'session' => [
-        'save' => 'redis',
-        'redis' => [
-            'host' => '127.0.0.1',
-            'port' => '6379',
-            'password' => '',
-            'timeout' => '15',
-            'persistent_identifier' => '',
-            'database' => '2',
-            'compression_threshold' => '2048',
-            'compression_library' => 'gzip',
-            'log_level' => '1',
-            'max_concurrency' => '15',
-            'break_after_frontend' => '5',
-            'break_after_adminhtml' => '30',
-            'first_lifetime' => '600',
-            'bot_first_lifetime' => '60',
-            'bot_lifetime' => '7200',
-            'disable_locking' => '0',
-            'min_lifetime' => '60',
-            'max_lifetime' => '2592000'
+   'session' => [
+    'save' => 'redis',
+    'redis' => [
+        'host' => '172.26.1.141',
+        'port' => '6379',
+        'password' => '',
+        'timeout' => '15',
+        'persistent_identifier' => '',
+        'database' => '2',
+        'compression_threshold' => '2048',
+        'compression_library' => 'gzip',
+        'log_level' => '1',
+        'max_concurrency' => '15',
+        'break_after_frontend' => '5',
+        'break_after_adminhtml' => '30',
+        'first_lifetime' => '600',
+        'bot_first_lifetime' => '60',
+        'bot_lifetime' => '7200',
+        'disable_locking' => '0',
+        'min_lifetime' => '60',
+        'max_lifetime' => '2592000'
+    ]
+],
+'cache' => [
+    'frontend' => [
+        'default' => [
+            'backend' => 'Cm_Cache_Backend_Redis',
+            'backend_options' => [
+                'server' => '172.26.1.141',
+                'port' => '6379',
+                'database' => '0',
+                'compress_data' => '1',
+                'force_standalone' => '0',
+                'connect_retries' => '10',
+                'read_timeout' => '30',
+                'automatic_cleaning_factor' => '0',
+                'compress_tags' => '1',
+                'compress_threshold' => '20480',
+                'compression_lib' => 'gzip'
+            ]
         ]
     ],
+    'allow_parallel_generation' => false
+],
     'cache' => [
         'frontend' => [
             'default' => [
